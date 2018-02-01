@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ng Date Diff</title>
+    
+    <!-- Latest compiled bootstrap minified CSS  -->
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!-- Latest compiled and minified AngularJs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="../dist/ngDateDiff.js"></script>
+    <style>
+    .code{
+        background-color: #000;
+    color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    }
+    .code span{
+        color: #555;
+    font-size: 15px;
+    margin-right: 10px;
+    }
+    .Result{
+        background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
+    }
+    /* BASICS */
+    </style>
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <br>
+        <div class="container">
+            
+        
+                
+                <div class="panel panel-success">
+                      <div class="panel-heading">
+                            <h3 class="panel-title">Sample</h3>
+                      </div>
+                      <div class="panel-body">
+                            <div>
+                                <strong>Date 1 :</strong>
+                                <span>2017-07-08T12:02:05</span>
+                            </div>
+                           
+                            <div>
+                                <strong>Date 2 :</strong>
+                                <span>2016-07-07T04:01:10</span>
+                            </div>
+
+                            <div class="code">
+                                   <span> 1 |</span>  ngDateDiff.Diff(Date1,Date2);
+                            </div>
+
+                            <div class="Result">
+                                <h4>Result</h4>
+                                    {
+                                        years: 1,
+                                        days: 1,
+                                        hours: 8,
+                                        minutes: 0,
+                                        seconds: 55
+                                        sum: {
+                                          days: 366,
+                                          hours: 8792,
+                                          minutes: 527520,
+                                          Seconds: 31651255,
+                                          years: 1
+                                        }
+                                      }
+                             </div>
+                            
+                      </div>
+                </div>
+        </div>
+        
+    </div>
+
+    <script>
+
+var app = angular.module("myApp", ['ngDateDiff']);
+app.controller("myCtrl", function($scope,ngDateDiff) {
+
+    var Date1 = "2017-07-08T12:02:05";
+    var Date2 = "2016-07-07T04:01:10";
+
+    var res = ngDateDiff.Diff(Date1,Date2);
+    console.log(res);
+});
+</script>
+    
+</body>
+</html>
