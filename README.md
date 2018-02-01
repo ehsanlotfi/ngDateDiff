@@ -2,8 +2,9 @@
 The difference between the two dates with angular services
 
 ### Sample
-Date 1 : 2017-07-08T12:02:05
-Date 2 : 2016-07-07T04:01:10
+
+    var Date1 =  "2017-07-08T12:02:05";
+    var Date2 =  "2016-07-07T04:01:10";
  
     1 | ngDateDiff.Diff(Date1,Date2);
 
